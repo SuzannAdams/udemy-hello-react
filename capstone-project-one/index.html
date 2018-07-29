@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>FriendLy</title>
+</head>
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <!-- Use Stateless Functional Components when you do not need additional features of Class Components
+    <FriendLy/> Complex Component
+        <Avatar/> Component
+        <UserName/> Component
+        <GetConnected/> Complex Component
+            <Like/> Component
+            <Share/> Component
+            <Add/> Component -->
+
+    <script type="text/babel">
+        
+        function FriendLy() {
+            let friendlyStyle = {
+                height: 350,
+                width: 240,
+                padding: 0,
+                backgroundColor: "#FFF",
+                WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+                filter: "drop-shadow(0px 0px 5px #555)"
+            }
+            return (
+                <div style={ friendlyStyle }>
+                     <Avatar/>
+                     <UserName/>
+                     <GetConnected/>
+                </div>
+            );
+        }
+
+        function Avatar() {
+            let avatarStyle = {
+                marginLeft: 20,
+                marginTop: 20,
+                width: 200,
+                height: 200,
+                borderRadius: "50%"
+            }
+            return (
+                <img src="./images/avatar.jpg" alt="profile pic" style={ avatarStyle }></img>
+            );
+        }
+        
+        function UserName() {
+            let nameStyle = {
+                fontSize: 24,
+                fontFamily: "Arial, Helvetica, sans-serif",
+                margin: 20
+            }
+            return (
+               <h1 style={ nameStyle }>Profile Name</h1> 
+            );
+        }
+
+        function GetConnected() {
+            return (
+                <div>
+                    <Like/>
+                    <Share/>
+                    <Add/>
+                </div>
+            );
+        }
+
+        let iconStyle = {
+            margin: 20
+        }
+
+        function Like() {
+            return (
+                <i className="far fa-thumbs-up" style={ iconStyle }></i>
+            );
+        }
+
+        function Share() {
+            return (
+                <i className="fas fa-share-alt" style={ iconStyle }></i>
+            );
+        }
+
+        function Add() {
+            return (
+                <i className="fas fa-users" style={ iconStyle }></i>
+            );
+        }
+
+        ReactDOM.render(
+            <FriendLy/>,
+            document.getElementById("app")
+        );
+
+    </script>
+</body>
+</html>

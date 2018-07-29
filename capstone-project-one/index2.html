@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <title>FriendLy</title>
+</head>
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <!-- Use Stateless Functional Components when you do not need additional features of Class Components
+    <FriendLy/> Complex Component
+        <Avatar/> Component
+        <UserName/> Component
+        <GetConnected/> Complex Component
+            <Like/> Component
+            <Share/> Component
+            <Add/> Component -->
+
+    <script type="text/babel">
+        
+        function FriendLy(props) {
+            let friendlyStyle = {
+                display: 'inline-block',
+                margin: 20,
+                height: 350,
+                width: 240,
+                padding: 0,
+                backgroundColor: "#FFF",
+                WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+                filter: "drop-shadow(0px 0px 5px #555)"
+            }
+            return (
+                <div style={ friendlyStyle }>
+                     <Avatar img={ props.avatar }/>
+                     <UserName username={ props.name }/>
+                     <GetConnected/>
+                </div>
+            );
+        }
+
+        function Avatar(props) {
+            let avatarStyle = {
+                marginLeft: 20,
+                marginTop: 20,
+                width: 200,
+                height: 200,
+                borderRadius: "50%"
+            }
+            return (
+                <img src={ props.img } alt="profile pic" style={ avatarStyle }></img>
+            );
+        }
+        
+        function UserName(props) {
+            let nameStyle = {
+                fontSize: 24,
+                fontFamily: "Arial, Helvetica, sans-serif",
+                margin: 20,
+                textAlign: "center"
+            }
+            return (
+               <h1 style={ nameStyle }>{ props.username }</h1> 
+            );
+        }
+
+        function GetConnected() {
+            let getConnectedStyle = {
+                margingLeft: 15
+            }
+            return (
+                <div style={ getConnectedStyle }>
+                    <Like/>
+                    <Share/>
+                    <Add/>
+                </div>
+            );
+        }
+
+        let iconStyle = {
+            margin: 20,
+            marginLeft: 35
+        }
+
+        function Like() {
+            return (
+                <i className="far fa-thumbs-up" style={ iconStyle }></i>
+            );
+        }
+
+        function Share() {
+            return (
+                <i className="fas fa-share-alt" style={ iconStyle }></i>
+            );
+        }
+
+        function Add() {
+            return (
+                <i className="fas fa-users" style={ iconStyle }></i>
+            );
+        }
+
+        // Challenge - Mass produce individual FriendLy cards using props
+        // Challenge 1 - Use props to pass the name of the person from ReactDOM.render() method to parent FriendLy component to child UserName component
+        // Challenge 2 - Use props to pass the image URL from ReactDOM.render() method to parent Friendly component to child Avatar component
+        // Challenge 3 - Mass produce individual Friendly cards by providing props and values in our ReactDOM.render() method
+
+        ReactDOM.render(
+            <div>
+                <FriendLy
+                    name="Raluca" 
+                    avatar="./images/avatar.jpg"
+                />
+                <FriendLy
+                    name="Alex" 
+                    avatar="https://i.pinimg.com/originals/5b/5c/c2/5b5cc265cf4135803a46b3a210120f5b.jpg"
+                />
+                <FriendLy
+                    name="Angelina" 
+                    avatar="https://static01.nyt.com/images/2017/09/17/arts/17ANGELINA-JOLIE1/17ANGELINA-JOLIE1-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+                />
+                <FriendLy
+                    name="Jenny" 
+                    avatar="https://cdn2.stylecraze.com/wp-content/uploads/2012/05/Hairstyle-Evolution-Of-Jennifer-Aniston.jpg"
+                />
+                <FriendLy
+                    name="Gigel" 
+                    avatar="https://i0.1616.ro/media/521/2861/35027/16607246/3/media-148527301649981200.jpg?width=960"
+                />
+                <FriendLy
+                    name="Brad" 
+                    avatar="https://assets.sport.ro/assets/protv/2018/06/28/image_galleries/58839/detaliile-neasteptate-despre-relatia-lui-brad-pitt-cu-noua-iubita-ies-la-iveala-ce-spun-prietenii-lor_3_size24.jpg"
+                />
+            </div>,
+            document.getElementById("app")
+        );
+
+    </script>
+</body>
+</html>

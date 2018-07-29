@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>FriendLy</title>
+</head>
+<body>
+    <div id="app">React has not rendered yet</div>
+    <script type="text/babel">
+        
+        function FriendLy() {
+            return (
+                <div>
+                     <Avatar/>
+                     <UserName/>
+                     <GetConnected/>
+                </div>
+            );
+        }
+
+        function Avatar() {
+            return (
+                <img src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/32158541_2125720174160851_6494133127286358016_n.jpg?_nc_cat=0&oh=dfce1796c4e30c001b89ff1989f16677&oe=5BD68FFC" alt="profile pic">
+            );
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- REACT LIBRARY -->
+     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+     <!-- REACT DOM LIBRARY -->
+     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+     <!-- BABEL LIBRARY -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Styling Components</title>
+</head>
+<body>
+    <div id="app">React has not rendered yet</div>
+    <script type="text/babel">
+
+        let ColorSpectrum = function() {
+            return(
+                <div>
+                    <Red/>
+                    <Orange/>
+                    <Yellow/>
+                    <Green/>
+                    <Blue/>
+                    <Indigo/>
+                    <Violet/>
+                </div>
+            );
+        }
+
+        let Red = function() {
+            let redStyle = {
+                width: 150,
+                backgroundColor: "red"
+            }
+
+            return (
+                <h1 style={ redStyle }>Red</h1>
+            );
+        }
+
+        let Orange = function() {
+            let orangeStyle = {
+                width: 150,
+                backgroundColor: "orange"              
+            }
+            return (
+                <h1 style={ orangeStyle }>Orange</h1>
+            );
+        }
+
+        let Yellow = function() {
+            let yellowStyling = {
+                width: 150,
+                backgroundColor: "yellow"
+            }
+            return (
+                <h1 style = { yellowStyling }>Yellow</h1>
+            );
+        }
+
+        let Green = function() {
+            let greenStyle = {
+                width: 150,
+                backgroundColor: "green"
+            }
+            return (
+                <h1 style={ greenStyle }>Green</h1>
+            );
+        }
+
+        let Blue = function() {
+            let blueStyle = {
+                width:150,
+                backgroundColor: "blue"
+            }
+            return (
+                <h1 style={ blueStyle }>Blue</h1>
+            );
+        }
+
+        let Indigo = function() {
+            let indigoStyle = {
+                width: 150,
+                backgroundColor: "indigo"
+            }
+            return (
+                <h1 style={ indigoStyle }>Indigo</h1>
+            );
+        }
+        
+        let Violet = function() {
+            let violetStyle = {
+                width: 150,
+                backgroundColor: "violet"
+            }
+            return (
+                <h1 style={ violetStyle }>Violet</h1>
+            );
+        }
+        
+        ReactDOM.render(
+            <ColorSpectrum/>,
+            document.getElementById("app")
+        );
+    </script>
+    
+</body>
+</html>

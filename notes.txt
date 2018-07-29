@@ -1,0 +1,81 @@
+ERIC ELLIOTT
+FUNCTIONAL PROGRAMMING - The essence of Functional Programming is really very simple; programs are built mostly with a handful of very small, very reusable, very predictable pure functions.
+PURE FUNCTION - a pure function is a function in which:
+    - given the same input, will always return the same output.
+    - produces no side effects.
+    - relies on no external state.
+
+Functional Programming is the pillar of javascript.
+Functions are values and can be passed to other functions as arguments
+Higher Order Function - can receive another function as an argument
+Pure Functions - 
+
+React Key
+
+When you render a list of items, React always stores some info about each item in the list. 
+If you render a component that has state, that state needs to be stored and regardless of how you implement your components, 
+React stores a reference to the backing native views. When you update that list, React needs to determine what has changed.
+You could have added, removed, rearranged, or updated items in the list. `Key` is a special property that's reserved by React.
+When an element is created, React pulls off the key property and stores the key dirrectly on the returned element. 
+Even though it may look like it is part of props, it cannot be referenced with `this.props.key`.
+
+
+React Events
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differencies:
+    - React events are named using camelCase, rather than lowercase.
+    - With JSX you pass a function as the event handler, rather than a string.
+
+Event Handler - function that should run whenever an event occurs
+
+Naming Convention:
+    1. Begin with `on` or `handle`
+    2. Name the DOM element
+    3. Describe the expected action
+    Ex. handleButtonEdit
+
+THIS & BIND
+
+In most cases, the value of `this` is determined by how a function is called. 
+It can't be set by assignment during execution, and it may be different each time the function is called. 
+ES5 introduced the bind method to set the value of a function's `this` regardless of how it's called. 
+Bind creates a new function that will have `this` set to the first parameter passed to bind();
+
+    - `this` is defined by creation context 
+    - in objects `this` is set to the object method is called on
+    - `Bind` helps `this` to find context
+    - pass object as argument to bind method to find desired context
+
+
+REACT STATE 
+
+Constructor - whenever an object is created via a class in javascript, javascript invokes the Constructor function.
+React will invoke the constructor with the props and context of the component.
+If you would like to set a property or access `this` inside the constructor you need to call super();
+
+REACT FORMS
+
+See React docs
+
+
+REACT AJAX REQUESTS & THE FETCH API
+
+AJAX stands for AsynchronousJavascriptAndXML. In a nutshell, it is the use of the XMLHttpRequest object to communicate with servers. 
+It can send and receive information in various formats, including JSON, XML, HTML, and text files. 
+AJAX's most appealing characteristic is its `asynchronous` nature, 
+which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
+
+The two major features of AJAX allow you to do the following:
+
+1. Make requests to the server without reloading the page
+2. Receive and work with data from the server
+
+What is an API ?
+
+An application program interface is a set of routines, protocols, and tools for building software applications. 
+Basically, an API specifies how software components should interact.
+
+Fetch Method - the fetch() method takes one mandatory argument, the path to the source you want to fetch. 
+It returns a promise that resolves to the Response to that request, whether it is successful or not.
+
+Javascript Promise - the Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
